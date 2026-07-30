@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch_scatter
-from model.loss_func.percept_loss import LPIPS
+from unisplat.model.loss_func.percept_loss import LPIPS
 from ..layers.patch_embed import PatchEmbed
 from ..layers.gaussian_dyn import GaussianRenderer_dyn
 from ..layers.spconv_unet import get_voxel_centers, project_world_points_to_images
@@ -15,8 +15,8 @@ from .utils import create_uv_grid, position_grid_to_embed, is_point_in_frustum_b
 from .unet import UNet
 from .head_layers import _make_scratch, _make_fusion_block_custom, custom_interpolate
 from simple_knn_v2._C import distCUDACross
-from pi3.models.layers.transformer_head import TransformerDecoder
-from pi3.models.layers.pos_embed import RoPE2D, PositionGetter
+from unisplat.pi3.models.layers.transformer_head import TransformerDecoder
+from unisplat.pi3.models.layers.pos_embed import RoPE2D, PositionGetter
 
 
 class GuassianHead(nn.Module):
@@ -1072,4 +1072,3 @@ class Gaussians_Queue_v2(nn.Module):
                             getattr(self, field)[i] = data[mask][:, 1:]
                         else:
                             getattr(self, field)[i] = data[mask]
-

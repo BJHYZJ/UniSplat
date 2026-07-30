@@ -8,7 +8,7 @@ from einops import rearrange
 
 from diff_gaussian_rasterization_feature import GaussianRasterizationSettings as GaussianRasterizationSettings_feature
 from diff_gaussian_rasterization_feature import GaussianRasterizer as GaussianRasterizer_feature
-from dataset.typing import *
+from unisplat.dataset.typing import *
 
 
 def convert_pose(C2W):

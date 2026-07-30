@@ -12,11 +12,11 @@ from torch.utils.data import DataLoader
 from torch.amp import autocast
 from safetensors.torch import load_file
 
-from dataset.waymo import WaymoDataset
-from dataset.utils import Logger
-from pi3.models.pi3 import Pi3
-from dataset.samplers.distributed_group_in_batch_sampler import DistributedGroupInBatchSampler, get_dist_info
-import model.gaussian_head as gaussian_head_class
+from unisplat.dataset.waymo import WaymoDataset
+from unisplat.dataset.utils import Logger
+from unisplat.pi3.models.pi3 import Pi3
+from unisplat.dataset.samplers.distributed_group_in_batch_sampler import DistributedGroupInBatchSampler, get_dist_info
+from unisplat.model import gaussian_head as gaussian_head_class
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Training script with YAML config")

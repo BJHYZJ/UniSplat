@@ -12,12 +12,12 @@ from torch.amp import autocast, GradScaler
 from accelerate.utils import set_seed
 from safetensors.torch import load_file
 
-import dataset as waymo_dataset
-from dataset.utils import Logger
-import dataset.utils as train_utils
-from dataset.samplers.distributed_group_in_batch_sampler import DistributedGroupInBatchSampler, get_dist_info
-from pi3.models.pi3 import Pi3
-import model.gaussian_head as gaussian_head_class
+from unisplat import dataset as waymo_dataset
+from unisplat.dataset.utils import Logger
+from unisplat.dataset import utils as train_utils
+from unisplat.dataset.samplers.distributed_group_in_batch_sampler import DistributedGroupInBatchSampler, get_dist_info
+from unisplat.pi3.models.pi3 import Pi3
+from unisplat.model import gaussian_head as gaussian_head_class
 
 
 # only these gaussian_head sub-modules are involved in scale & shift prediction

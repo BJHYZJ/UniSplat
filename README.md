@@ -23,10 +23,20 @@ git clone git@github.com:chenshi3/UniSplat.git
 cd UniSplat
 pip install -r requirements.txt
 
+## install UniSplat as an editable Python package
+pip install -e .
+
 ## install 3DGS rasterizer
 pip install -e submodules/diff-gaussian-rasterization-feature
 pip install -e submodules/simple-knn-v2
 
+```
+
+After installation, UniSplat can be imported from any working directory:
+
+```python
+from unisplat.model.gaussian_head import GuassianHead
+from unisplat.pi3.models.pi3 import Pi3
 ```
 
 Then download the pretrained model [weights](https://huggingface.co/chenchenshi/UniSplat/blob/main/model.safetensors) and example [data](https://huggingface.co/chenchenshi/UniSplat/blob/main/data.zip) from Hugging Face.
@@ -171,5 +181,4 @@ Please consider citing our work as follows if it is helpful.
 ## Acknowledgements
 
 UniSplat uses code from a few open source repositories. Without the efforts of these folks (and their willingness to release their implementations), UniSplat would not be possible. Thanks to these great repositories: [VGGT](https://github.com/facebookresearch/vggt), [MoGe](https://github.com/microsoft/MoGe), [Dino](https://github.com/facebookresearch/dinov2), [Pi3](https://github.com/yyfz/Pi3), [Feature 3DGS](https://github.com/ShijieZhou-UCLA/feature-3dgs), [Omni-Scene](https://github.com/WU-CVGL/Omni-Scene).
-
 
